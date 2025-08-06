@@ -34,8 +34,9 @@ tar -C /opt/cni/bin -xzf /tmp/cni-plugins-linux-amd64-v1.4.0.tgz
 mkdir -p /etc/containerd
 containerd config default | tee /etc/containerd/config.toml
 
-####
-####
+sed -i 's/SystemdCgroup = false/SystemdCgroup = true/' /etc/containerd/config.toml
+
+systemctl restart containerd
 
 dnf install -y curl wget vim git bash-completion lvm2 device-mapper-persistent-data
 cat <<'EOF' > /etc/yum.repos.d/kubernetes.repo
