@@ -1,6 +1,6 @@
 #!/bin/bash
 dnf update -y
-dns install -y wget python3-dnf-plugins-extras-versionlock
+dnf install -y wget python3-dnf-plugins-extras-versionlock
 swapoff -a
 sed -i '/ swap / s/^/#/' /etc/fstab
 modprobe overlay
