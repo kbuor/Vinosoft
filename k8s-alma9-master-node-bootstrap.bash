@@ -1,6 +1,6 @@
 #!/bin/bash
 # Bootstrap Master
-kubeadm init --pod-network-cidr=192.168.0.0/16 --node-name=$NODE_NAME --apiserver-cert-extra-sans=$IP_LOCAL --apiserver-cert-extra-sans=$NODE_NAME
+kubeadm init --pod-network-cidr=192.168.0.0/16
 
 # Configure Credentials
 mkdir -p $HOME/.kube
